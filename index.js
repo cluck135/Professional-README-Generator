@@ -14,7 +14,7 @@ inquirer.prompt([
     },
     {
         type:'input',
-        message:'Enter your installation instructions:',
+        message:'Enter your installation instructions: (npm i)',
         name:'installation'
     },
     {
@@ -29,7 +29,7 @@ inquirer.prompt([
     },
     {
         type:'input',
-        message:'Enter your test instructions:',
+        message:'Enter your test instructions: (node index.js)',
         name:'test'
     },
     {
@@ -50,55 +50,67 @@ inquirer.prompt([
     },
 ]).then((data) => {
     let license;
+    let link;
     switch (data.license) {
 
         case 'ISC': 
-        license = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+        license = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue)](https://opensource.org/licenses/ISC)';
+        link = 'https://opensource.org/licenses/ISC'
             break;
         case 'MIT':
-        license = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+        license = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)';
+        link = 'https://opensource.org/licenses/MIT'
             break;
-        case 'Apache 2.0': 
-        license = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-            break;
-        case 'Boost 1.0':
-        license = '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+        case 'GPL': 
+        license = '[![License: GPL](https://img.shields.io/badge/License-GPL-blue)](https://opensource.org/licenses/AGPL-3.0)';
+        link = 'https://opensource.org/licenses/AGPL-3.0'
             break;
         default:
             license = '';
             break;
     }
     const string = `
-# ${data.title}
-## license
-${license}
+    
 
+# ${data.title}
+${license}
 ## Description
 ${data.description}
+
+## Table of Contents
+- [Installation Instructions](#installation-instructions)
+- [Usage Information](#usage-information)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Test Instructions](#test-instructions)
+- [Questions](#questions)
+- [Video](#video)
 
 ## Installation Instructions
 ${data.installation}
 
-## usage information
+## Usage Information
 ${data.usage}
 
-## contribution guidelines
+## Contribution Guidelines
 ${data.contribution}
 
-## test instructions
+## Test Instructions
 ${data.test}
 
-## Questions
-[My Github Profile: ${data.github}](https://github.com/${data.github})
+## License
+This project is licensed under the terms of the [${data.license}](${link}) license
 
-Email me your questions at:[${data.email}](mailto:${data.email})
+## Questions
+My Github Profile: [${data.github}](https://github.com/${data.github})
+
+Email me your questions at: [${data.email}](mailto:${data.email})
 
 ## Video
 Watch this for a guide on this project[Video]()
 `
 
 
-    fs.writeFile("sampleREADME.md",  string, (err) =>
+    fs.writeFile("README.md",  string, (err) =>
     err? console.error(err) : console.log("created!")
 )
 })
