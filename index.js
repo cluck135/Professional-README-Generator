@@ -106,7 +106,7 @@ My Github Profile: [${data.github}](https://github.com/${data.github})
 Email me your questions at: [${data.email}](mailto:${data.email})
 
 ## Video
-Watch this for a guide on this project[Video]()
+Watch this for a guide on this project: [Video](https://drive.google.com/file/d/1zXHvoDlDelMJ3odNWEvhDtj3N-9MNoGE/view?usp=sharing)
 `
 
 
