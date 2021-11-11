@@ -1,10 +1,11 @@
 
     
 
-# Read Me Generator
+# Read Me Genrator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
+
 ## Description
-A project to generate a read me file for user
+A read me generator
 
 ## Table of Contents
 - [Installation Instructions](#installation-instructions)
@@ -15,16 +16,20 @@ A project to generate a read me file for user
 - [Video](#video)
 
 ## Installation Instructions
+```
 npm i
+```
 
 ## Usage Information
-anything
+n/a
 
 ## Contribution Guidelines
-No contributions
+n/a
 
 ## Test Instructions
+```
 node index.js
+```
 
 ## License
 This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license
